@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Tutor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: beige;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e44f22;
+            color: beige;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e44f22;
+            padding: 10px;
+        }
+        nav a {
+            color: beige;
+            margin: 0 15px;
+            text-decoration: none;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: beige;
+            transition: width .3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: beige;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section:hover {
+            background-color: #e44f22;
+            color: beige;
+        }
+        .section h2 {
+            text-align: left;
+        }
+        .section p {
+            text-align: left;
+        }
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: beige;
+        }
+        .dark-mode header {
+            background-color: #444;
+        }
+        .dark-mode nav {
+            background-color: #444;
+        }
+        .dark-mode nav a {
+            color: beige;
+        }
+        .dark-mode .section {
+            background-color: #444;
+        }
+        .dark-mode .section:hover {
+            background-color: #e44f22;
+        }
+        #dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #e44f22;
+            color: beige;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Articles</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/shop">Shop</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/sign">Sign In</a>
+    </nav>
+    <div class="container">
+        <div id="blog" class="section">
+            <h2>The World's Most Expensive Coffee</h2>
+            <img src="https://th.bing.com/th/id/R.8fc5aae6852378e7c02207571dce7734?rik=u%2bJHInA8NqWPqA&riu=http%3a%2f%2fwww.brewed-coffee.com%2fwp-content%2fuploads%2f2013%2f07%2fexpensive-cup-of-coffee.jpg&ehk=rQgu5pVV9BYCRTUhxlXjGIHYHUpMlCmRkKTKj%2fzcpWc%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Expensive Coffee">
+            <p>Did you know that the most expensive coffee in the world is called Kopi Luwak? It is made using coffee beans that have been eaten and excreted by a civet cat. The unique fermentation process gives it a distinct flavor.</p>
+        </div>
+        <div class="section">
+            <h2>Coffee and Your Health</h2>
+            <img src="https://th.bing.com/th/id/OIP.ytU5jt6rWXA9BfIWcfIowQHaE8?rs=1&pid=ImgDetMain" alt="Coffee and Health">
+            <p>Studies have shown that drinking coffee can have numerous health benefits, including reducing the risk of certain diseases such as Parkinson's and Alzheimer's. However, moderation is key!</p>
+        </div>
+        <div class="section">
+            <h2>The Coffee Belt</h2>
+            <img src="https://thefreedomhub.org/wp-content/uploads/2021/04/Screen-Shot-2021-04-26-at-2.58.25-pm.png" alt="Coffee Belt">
+            <p>Coffee is grown in a region known as the Coffee Belt, which includes countries in Central and South America, Africa, and Asia. The climate in these regions is perfect for growing coffee beans.</p>
+        </div>
+    </div>
+    <button id="dark-mode-toggle">Dark Mode</button>
+    <script>
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
+    </script>
+</body>
+</html>
