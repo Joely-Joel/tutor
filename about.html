@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Tutor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: beige;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e44f22;
+            color: beige;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e44f22;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width .3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            text-align: center;
+        }
+        .section p {
+            text-align: center;
+        }
+        .content-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: beige;
+            margin: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .content-box:hover {
+            background-color: #e44f22;
+            color: white;
+        }
+        .content-box div {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        .dark-mode nav {
+            background-color: #444;
+        }
+        .dark-mode nav a {
+            color: white;
+        }
+        .dark-mode .content-box {
+            background-color: #444;
+        }
+        .dark-mode .content-box:hover {
+            background-color: #e44f22;
+            color: white;
+        }
+        #dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #e44f22;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Abouts Us</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/shop">Shop</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/sign">Sign In</a>
+    </nav>
+    <div class="container">
+        <div id="about" class="section">
+            <div class="content-box">
+                <div>
+                    <h3>Our Journey</h3>
+                    <p>BEAN & BREW started with a passion for quality coffee and a commitment to sustainability. Our journey began in a small café, and today we are proud to serve coffee lovers around the world.</p>
+                </div>
+                <div>
+                    <h3>About the Coffee Industry</h3>
+                    <p>The coffee industry is a global network of farmers, traders, roasters, and baristas. It is an industry that supports millions of livelihoods and brings people together over a shared love of coffee.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="dark-mode-toggle">Dark Mode</button>
+    <script>
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
+    </script>
+</body>
+</html>
