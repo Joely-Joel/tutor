@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Tutor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: beige;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e44f22;
+            color: beige;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e44f22;
+            padding: 10px;
+        }
+        nav a {
+            color: beige;
+            margin: 0 15px;
+            text-decoration: none;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: beige;
+            transition: width .3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: beige;
+            transition: background-color 0.3s, color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section:hover {
+            background-color: #e44f22;
+            color: beige;
+        }
+        .section h2 {
+            text-align: left;
+        }
+        .section p {
+            text-align: left;
+        }
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: beige;
+        }
+        .dark-mode header {
+            background-color: #444;
+        }
+        .dark-mode nav {
+            background-color: #444;
+        }
+        .dark-mode nav a {
+            color: beige;
+        }
+        .dark-mode .section {
+            background-color: #444;
+        }
+        .dark-mode .section:hover {
+            background-color: #e44f22;
+        }
+        #dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #e44f22;
+            color: beige;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/shop">Shop</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/sign">Sign In</a>
+    </nav>
+    <button id="dark-mode-toggle">Dark Mode</button>
+    <div class="container">
+        <div id="home" class="section">
+            <h2>You Are logged In!</h2>
+            <h2>The Perfect Way to Start Your Day!</h2>
+            <p>BEAN & BREW is a coffee shop that offers a variety of coffee drinks. Our coffee is made from the finest beans and is brewed fresh every day. Whether you're looking for a quick pick-me-up or a place to relax and unwind, BEAN & BREW has
+        </div>
+    </div>
+    <script>
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
+    </script>
+</body>
+</html>
