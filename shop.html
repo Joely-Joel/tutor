@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Tutor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            color: black;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: beige;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e44f22;
+            color: beige;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #e44f22;
+            padding: 10px;
+        }
+        nav a {
+            color: beige;
+            margin: 0 15px;
+            text-decoration: none;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: beige;
+            transition: width .3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .container {
+            padding: 20px;
+        }
+        .coffee-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .coffee-item {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: beige;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .coffee-item:hover {
+            background-color: #e44f22;
+            color: beige;
+        }
+        .coffee-item img {
+            max-width: 100px;
+            height: auto;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: beige;
+        }
+        .dark-mode header {
+            background-color: #444;
+        }
+        .dark-mode nav {
+            background-color: #444;
+        }
+        .dark-mode nav a {
+            color: beige;
+        }
+        .dark-mode .coffee-item {
+            background-color: #444;
+        }
+        .dark-mode .coffee-item:hover {
+            background-color: #e44f22;
+        }
+        #dark-mode-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #e44f22;
+            color: beige;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 15px;
+            background-color: #e44f22;
+            color: beige;
+            border-radius: 5px;
+            max-height: 300px;
+            overflow-y: auto;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .cart ul {
+            list-style: none;
+            padding: 0;
+        }
+        .cart ul li {
+            margin: 5px 0;
+        }
+        .cart-total {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .remove-item {
+            color: #e44f22;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .clear-cart {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: red;
+            color: beige;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shop</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/shop">Shop</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/sign">Sign In</a>
+    </nav>
+    <div class="container">
+        <div class="coffee-menu">
+            <div class="coffee-item">
+                <img src="https://www.fourthestatecoffee.com/wp-content/uploads/2020/05/gallery8.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>Rich and bold espresso with a smooth finish.</p>
+                <p class="price">£2.50</p>
+                <div class="quantity-container">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://coffeeaffection.com/wp-content/uploads/2020/01/how-to-make-a-latte-at-home.jpg" alt="Latte">
+                <h3>Latte</h3>
+                <p>Creamy latte with a perfect balance of espresso and steamed milk.</p>
+                <p class="price">£3.00</p>
+                <div class="quantity-container">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Cappuccino_at_Sightglass_Coffee.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>Classic cappuccino with a rich layer of foam.</p>
+                <p class="price">£3.00</p>
+                <div class="quantity-container">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://coffeforus.com/wp-content/uploads/2022/12/Americano-coffee-recipe.jpg" alt="Americano">
+                <h3>Americano</h3>
+                <p>Smooth and strong Americano, perfect for any time of day.</p>
+                <p class="price">£2.50</p>
+                <div class="quantity-container">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="coffee-item">
+                <img src="https://2.bp.blogspot.com/-I0rdxZj_dwk/UFZQs22fSBI/AAAAAAAAAKw/byN1OWiehWI/s1600/ToffeeMocha.JPG" alt="Mocha">
+                <h3>Mocha</h3>
+                <p>Delicious mocha with a blend of chocolate and espresso.</p>
+                <p class="price">£3.50</p>
+                <div class="quantity-container">
+                    <button class="minus">-</button>
+                    <span class="quantity">0</span>
+                    <button class="plus">+</button>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h3>Shopping Cart</h3>
+        <ul id="cart-list"></ul>
+        <p class="cart-total">Total: £0.00</p>
+        <button class="clear-cart">Clear All</button>
+        <button class="submit-order">Submit Order</button>
+    </div>
+
+    <button id="dark-mode-toggle">Dark Mode</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = [];
+            const cartList = document.getElementById('cart-list');
+            const cartTotal = document.querySelector('.cart-total');
+
+            document.querySelectorAll('.coffee-item').forEach(item => {
+                const quantity = item.querySelector('.quantity');
+                const price = parseFloat(item.querySelector('.price').textContent.substring(1));
+
+                item.querySelector('.plus').addEventListener('click', function() {
+                    quantity.textContent = parseInt(quantity.textContent) + 1;
+                });
+
+                item.querySelector('.minus').addEventListener('click', function() {
+                    if (parseInt(quantity.textContent) > 0) {
+                        quantity.textContent = parseInt(quantity.textContent) - 1;
+                    }
+                });
+
+                item.querySelector('.add-to-cart').addEventListener('click', function() {
+                    const itemName = item.querySelector('h3').textContent;
+                    const itemQuantity = parseInt(quantity.textContent);
+                    if (itemQuantity > 0) {
+                        const existingItem = cart.find(cartItem => cartItem.name === itemName);
+                        if (existingItem) {
+                            existingItem.quantity += itemQuantity;
+                        } else {
+                            cart.push({ name: itemName, price, quantity: itemQuantity });
+                        }
+                        updateCart();
+                    }
+                });
+            });
+
+            function updateCart() {
+                cartList.innerHTML = '';
+                let total = 0;
+                cart.forEach(cartItem => {
+                    const li = document.createElement('li');
+                    li.textContent = `${cartItem.name} - £${(cartItem.price * cartItem.quantity).toFixed(2)} (x${cartItem.quantity})`;
+
+                    // Add "Remove" button
+                    const removeButton = document.createElement('span');
+                    removeButton.textContent = 'Remove';
+                    removeButton.classList.add('remove-item');
+                    removeButton.addEventListener('click', function() {
+                        removeItem(cartItem.name);
+                    });
+
+                    li.appendChild(removeButton);
+                    cartList.appendChild(li);
+                    total += cartItem.price * cartItem.quantity;
+                });
+
+                cartTotal.textContent = `Total: £${total.toFixed(2)}`;
+            }
+
+            function removeItem(itemName) {
+                const index = cart.findIndex(cartItem => cartItem.name === itemName);
+                if (index !== -1) {
+                    cart.splice(index, 1);
+                    updateCart();
+                }
+            }
+
+            // Clear all items in the cart
+            document.querySelector('.clear-cart').addEventListener('click', function() {
+                cart.length = 0;
+                updateCart();
+            });
+
+            const toggleButton = document.getElementById('dark-mode-toggle');
+            toggleButton.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+            });
+        });
+    </script>
+</body>
+</html>
