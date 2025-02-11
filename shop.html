@@ -58,15 +58,15 @@
             justify-content: space-around;
         }
         .coffee-item {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: #444; /* Match the cart background color */
             padding: 20px;
             border-radius: 10px;
-            background-color: beige;
             transition: background-color 0.3s, color 0.3s;
             margin: 10px;
             width: 200px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            color: beige; 
         }
         .coffee-item:hover {
             background-color: #e44f22;
@@ -107,45 +107,66 @@
             border-radius: 5px;
         }
         .cart {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            padding: 15px;
-            background-color: #e44f22;
-            color: beige;
-            border-radius: 5px;
-            max-height: 300px;
-            overflow-y: auto;
-            width: 300px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .cart ul {
-            list-style: none;
-            padding: 0;
-        }
-        .cart ul li {
-            margin: 5px 0;
-        }
-        .cart-total {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .remove-item {
-            color: #e44f22;
-            cursor: pointer;
-            font-weight: bold;
-            margin-left: 10px;
-        }
-        .clear-cart {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: red;
-            color: beige;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 5px;
-        }
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        padding: 15px;
+        background-color: #444; /* Match the coffee item background */
+        color: beige;
+        border-radius: 5px;
+        max-height: 300px;
+        overflow-y: auto;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cart:hover {
+        background-color: #e44f22; /* Match the hover color for consistency */
+        color: beige;
+    }
+
+    .cart ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .cart ul li {
+        margin: 5px 0;
+    }
+
+    .cart-total {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .remove-item {
+        color: #e44f22;
+        cursor: pointer;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    .clear-cart {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #e44f22;
+        color: beige;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .submit-order {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #e44f22;
+        color: beige;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 5px;
+    }
     </style>
 </head>
 <body>
